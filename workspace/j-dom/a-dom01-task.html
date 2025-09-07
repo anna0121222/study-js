@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>클래스 이름 선택 실습</title>
+    </head>
+    <body>
+        <ul>
+            <li class="car">페라리</li>
+            <li class="car">람보르기니</li>
+            <li class="car">벤츠</li>
+        </ul>
+    </body>
+    <script>
+        // 자동차 중 ferrari만 빨간색 글자로 설정하고,
+        // 나머지 자동차는 글자 크기를 20px로 설정한다.
+        // css: font-size, js: fontSize
+        HTMLCollection.prototype.forEach = Array.prototype.forEach;
+
+        const cars = document.getElementsByClassName("car");
+        // 첫번째 객체에 클래스를 ferrari로 추가한다.
+        cars[0].classList.add("ferrari");
+
+        cars.forEach((car, i) => {
+            const condition = car.classList[1];
+            const style = condition ? "color: red" : "fontSize: 20px";
+            car.setAttribute("style", style);
+
+            // car.style[i === 0 ? "color" : "fontSize"] =
+            //     i === 0 ? "red" : "20px";
+            // if (i === 0) {
+            //     car.style.color = "red";
+            // } else {
+            //     car.style.fontSize = "20px";
+            // }
+        });
+    </script>
+</html>

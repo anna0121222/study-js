@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>이벤트 위임</title>
+        <style>
+            #container {
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" style="height: 400px"></div>
+    </body>
+    <script>
+        const container = document.getElementById("container");
+
+        let children = null;
+        container.innerHTML = `<div class="child child1">이벤트 위임1</div>`;
+        container.innerHTML += `<div class="child child2">이벤트 위임2</div>`;
+
+        children = document.querySelectorAll("div.child");
+
+        // 이벤트 위임
+        // JS에서 추가한 태그들은 여러 상황에 따라 이벤트 처리가 불가능할 수 있다.
+        // 이럴 때에는 기존에 있었던 부모 HTML 객체에 이벤트를 작성한 뒤
+        // 이후 추가될 자식 태그들에게 이벤트를 위임하는 방법으로 개발한다.
+        // container.addEventListener("click", (e) => {
+        //     if (e.target.classList[1] === `child1`) {
+        //         alert("첫 번째 자식 눌림!");
+        //     } else if (e.target.classList[1] === `child2`) {
+        //         alert("두 번째 자식 눌림!");
+        //     }
+        // });
+
+        children.forEach((child) => {
+            child.addEventListener("click", (e) => {
+                alert(`${child.classList[1]} 눌림!`);
+            });
+        });
+    </script>
+</html>

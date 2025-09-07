@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>아이디 속성 선택</title>
+    </head>
+    <body>
+        <h1>아이디 속성 선택</h1>
+        <div id="first">
+            <strong style="display: none">첫 번째 DIV입니다.</strong>
+        </div>
+        <div id="second">두 번째 DIV입니다.</div>
+        <textarea id="third">textarea입니다.</textarea>
+        <input type="text" id="fourth" value="input입니다." />
+    </body>
+    <script>
+        const first = document.getElementById("first");
+        const second = document.getElementById("second");
+        const third = document.getElementById("third");
+        const fourth = document.getElementById("fourth");
+
+        // w/r: write(수정, 작성)도 가능하다.
+        // innerHTML: 태그는 태그로 인식
+        // innerText: 내용(텍스트)만 인식(CSS도 검사)
+        // textContent: 내용(텍스트)만 인식(CSS는 무시)
+        console.log(first.innerHTML);
+        console.log(first.innerText);
+        console.log(first.textContent);
+
+        // second.innerText = "<strong>수정된 DIV태그입니다.</strong>";
+        second.innerHTML = "<strong>수정된 DIV태그입니다.</strong>";
+
+        // textarea는 원래 작성되어 있던 내용을 innerHTML로 가져올 수 있다.
+        // textarea는 innerText로 입력한 값을 가져올 수 없다.
+        // textarea는 입력받은 값을 value로 가져올 수 있다.
+        console.log(third.innerHTML);
+        console.log(third.innerText);
+        console.log(third.value);
+
+        // input은 value로만 입력한 값을 가져올 수 있다.
+        console.log(fourth.value);
+    </script>
+</html>

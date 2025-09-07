@@ -1,0 +1,60 @@
+section.container {
+    width: 1500px;
+    overflow: hidden;
+    margin: 0 auto;
+    position: relative;
+}
+
+div.banner {
+    display: flex;
+    width: 12000px;
+}
+
+div.banner div {
+    width: 1500px;
+    height: 350px;
+}
+
+div.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+div.arrow {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    transform: translate(0,-50%);
+    cursor: pointer;
+}
+
+div.arrow img {
+    width: 100%;
+    height: 100%;
+}
+
+div.arrow.left {
+    left: 20px;
+}
+
+div.arrow.right {
+    right: 20px;
+}
+
+div.buttons {
+    width: 1500px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+div.buttons button {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}

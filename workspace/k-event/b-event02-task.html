@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            input {
+                outline: none;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" name="form">
+            <input type="text" name="name" placeholder="이름" />
+            <input type="text" name="age" placeholder="나이" />
+        </form>
+    </body>
+    <script>
+        //focus된 input태그의 테두리는 녹색으로,
+        //blur된 input태그의 테두리는 빨간색으로 설정
+        const inputs = document.querySelectorAll("form input");
+
+        inputs.forEach((input) => {
+            input.addEventListener("focus", (e) => {
+                e.target.style.border = "1px solid green";
+                // input.style.border = "1px solid green";
+            });
+
+            input.addEventListener("blur", (e) => {
+                input.style.border = "1px solid red";
+            });
+        });
+    </script>
+</html>

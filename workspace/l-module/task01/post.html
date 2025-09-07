@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>모듈화 실습1</title>
+        <style>
+            table {
+                margin: 0 auto;
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                width: 464px;
+            }
+
+            tr,
+            td {
+                border: 1px solid black;
+            }
+
+            tr td:first-child {
+                width: 50px;
+            }
+
+            td {
+                display: inline-block;
+                width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 테이블 태그를 사용해서 게시글 목록 화면을 구현한다. -->
+        <!-- 게시글 전체 목록 중, 10개만 가져온다. -->
+        <!-- 게시글 정보는 userId, title, body를 사용한다. -->
+        <!-- 이 때 게시글 제목 또는 내용이 넘칠 경우 ... 스타일로 처리해준다. -->
+        <!-- <button id="get-posts">게시글 불러오기</button> -->
+        <input type="text" id="page" />
+        <!-- <div><button>1</button><button>2</button><button>3</button></div> -->
+        <table class="posts"></table>
+    </body>
+    <script src="service.js"></script>
+    <script src="layout.js"></script>
+    <script src="event.js"></script>
+</html>
